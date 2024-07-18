@@ -25,3 +25,11 @@ Footer p {
     color: #fff;
     font-size: 12px;
 }
+
+@media (max-width: 560px) {
+    Footer {
+        flex-direction: column;
+        height: 200px
+    }
+
+}
