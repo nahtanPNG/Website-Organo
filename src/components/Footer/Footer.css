@@ -1,0 +1,27 @@
+Footer {
+    background-color: #6278F7;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 180px;
+}
+
+Footer .logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+}
+
+Footer .logos img {
+    width: 20px;
+}
+
+Footer .logo {
+    width: 100px;
+}
+
+Footer p {
+    color: #fff;
+    font-size: 12px;
+}
