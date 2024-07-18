@@ -5,16 +5,6 @@ import TextInput from "../TextInput";
 import "./Formulario.css";
 
 function Form(props) {
-  const times = [
-    "Programação",
-    "Front-End",
-    "Data Science",
-    "Devops",
-    "UX e Design",
-    "Mobile",
-    "Inovação e Gestão",
-  ];
-
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [imagem, setImagem] = useState("");
@@ -28,6 +18,10 @@ function Form(props) {
       imagem,
       time,
     });
+    setNome("");
+    setCargo("");
+    setImagem("");
+    setTime("");
   };
 
   return (
@@ -58,7 +52,7 @@ function Form(props) {
           valor={time}
           aoAlterado={(valor) => setTime(valor)}
           required={true}
-          itens={times}
+          itens={props.times}
           label="Time"
         />
         <Button>Criar Card</Button>
