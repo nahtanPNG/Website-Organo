@@ -9,6 +9,8 @@ function Team(props) {
         <div className="colaboradores">
           {props.colaboradores.map((colaborador) => (
             <Collaborator
+              key={colaborador.nome}
+              corFundo={props.corDestaque}
               nome={colaborador.nome}
               cargo={colaborador.cargo}
               imagem={colaborador.imagem}

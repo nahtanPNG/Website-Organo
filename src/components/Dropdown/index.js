@@ -10,6 +10,7 @@ function Dropdown(props) {
         value={props.valor}
       >
         {/* Recebendo os itens do array e mapeando os itens para a tag <option> */}
+        <option value=""></option>
         {props.itens.map((item) => (
           <option key={item}>{item}</option>
         ))}

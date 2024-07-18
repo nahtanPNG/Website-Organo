@@ -1,9 +1,9 @@
 import "./Collaborator.css";
 
-export default function Collaborator({nome, cargo, imagem}) {
+export default function Collaborator({nome, cargo, imagem, corFundo}) {
   return (
     <div className="colaborador">
-      <div className="cabecalho">
+      <div className="cabecalho" style={{backgroundColor: corFundo}}>
         <img src={imagem} alt={nome} />
       </div>
       <div className="rodape">

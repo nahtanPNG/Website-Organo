@@ -47,7 +47,6 @@ function App() {
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
     setColaboradores([...colaboradores, colaborador]); //Pegando os colaboradores antigos e adicionando o novo
-    console.log(colaboradores);
   };
 
   return (
