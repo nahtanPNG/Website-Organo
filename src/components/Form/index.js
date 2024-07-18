@@ -4,7 +4,7 @@ import Dropdown from "../Dropdown";
 import TextInput from "../TextInput";
 import "./Formulario.css";
 
-function Form() {
+function Form(props) {
   const times = [
     "Programação",
     "Front-End",
@@ -22,7 +22,12 @@ function Form() {
 
   const handleSubmit = (event) => {
     event.preventDefault(); //Previne o comportamento padrão do evento
-    console.log("Form submetido com sucesso => ", nome, cargo, imagem, time);
+    props.aoCadastrarColaborador({
+      nome,
+      cargo,
+      imagem,
+      time,
+    });
   };
 
   return (
