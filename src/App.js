@@ -5,43 +5,36 @@ import Team from "./components/Team";
 import Footer from "./components/Footer/index.js";
 
 function App() {
-  const times = [
+  const [times, setTimes] = useState([
     {
       nome: "Programação",
-      corFundo: "#D9F7E9",
-      corDestaque: "#57C278",
+      cor: "#57C278",
     },
     {
       nome: "Front-End",
-      corFundo: "#E8F8FF",
-      corDestaque: "#82CFFA",
+      cor: "#82CFFA",
     },
     {
       nome: "Data Science",
-      corFundo: "#F0F8E2",
-      corDestaque: "#A6D157",
+      cor: "#A6D157",
     },
     {
       nome: "Devops",
-      corFundo: "#FDE7E8",
-      corDestaque: "#E06B69",
+      cor: "#E06B69",
     },
     {
       nome: "UX e Design",
-      corFundo: "#FAE9F5",
-      corDestaque: "#DB6EBF",
+      cor: "#DB6EBF",
     },
     {
       nome: "Mobile",
-      corFundo: "#FFF5D9",
-      corDestaque: "#FFBA05",
+      cor: "#FFBA05",
     },
     {
       nome: "Inovacão e Gestão",
-      corFundo: "#FFEEDF",
-      corDestaque: "#FF8A29",
+      cor: "#FF8A29",
     },
-  ];
+  ]);
 
   const [colaboradores, setColaboradores] = useState([]);
 
@@ -51,6 +44,17 @@ function App() {
 
   function deletarColaborador() {
     console.log("Deletar colaborador");
+  }
+
+  function mudarCorDoTime(cor, nome) {
+    setTimes(
+      times.map((time) => {
+        if (time.nome === nome) {
+          time.cor = cor;
+        }
+        return time;
+      })
+    );
   }
 
   return (
@@ -85,12 +89,12 @@ function App() {
           <Team
             key={time.nome}
             title={time.nome}
-            corFundo={time.corFundo}
-            corDestaque={time.corDestaque}
+            cor={time.cor}
             colaboradores={colaboradores.filter(
               (colaborador) => colaborador.time === time.nome
             )}
             aoDeletar={deletarColaborador}
+            mudarCor={mudarCorDoTime}
           />
         );
       })}
