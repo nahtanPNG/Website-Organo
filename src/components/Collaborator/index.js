@@ -8,7 +8,7 @@ export default function Collaborator({nome, cargo, imagem, corFundo}) {
       </div>
       <div className="rodape">
         <h4>{nome}</h4>
-        <h4>{cargo}</h4>
+        <h5>{cargo}</h5>
       </div>
     </div>
   );
