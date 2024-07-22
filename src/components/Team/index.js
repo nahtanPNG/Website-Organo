@@ -9,7 +9,7 @@ function Team(props) {
         <input
           value={props.cor}
           onChange={(evento) =>
-            props.mudarCor(evento.target.value, props.title)
+            props.mudarCor(evento.target.value, props.id)
           }
           type="color"
           className="input-cor"

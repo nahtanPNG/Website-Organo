@@ -3,34 +3,42 @@ import Banner from "./components/Banner/Banner.js";
 import Form from "./components/Form";
 import Team from "./components/Team";
 import Footer from "./components/Footer/index.js";
+import { v4 as uuid4 } from "uuid";
 
 function App() {
   const [times, setTimes] = useState([
     {
+      id: uuid4(),
       nome: "Programação",
       cor: "#57C278",
     },
     {
+      id: uuid4(),
       nome: "Front-End",
       cor: "#82CFFA",
     },
     {
+      id: uuid4(),
       nome: "Data Science",
       cor: "#A6D157",
     },
     {
+      id: uuid4(),
       nome: "Devops",
       cor: "#E06B69",
     },
     {
+      id: uuid4(),
       nome: "UX e Design",
       cor: "#DB6EBF",
     },
     {
+      id: uuid4(),
       nome: "Mobile",
       cor: "#FFBA05",
     },
     {
+      id: uuid4(),
       nome: "Inovacão e Gestão",
       cor: "#FF8A29",
     },
@@ -46,10 +54,10 @@ function App() {
     console.log("Deletar colaborador");
   }
 
-  function mudarCorDoTime(cor, nome) {
+  function mudarCorDoTime(cor, id) {
     setTimes(
       times.map((time) => {
-        if (time.nome === nome) {
+        if (time.id === id) {
           time.cor = cor;
         }
         return time;
@@ -87,6 +95,7 @@ function App() {
       {times.map((time) => {
         return (
           <Team
+            id={time.id}
             key={time.nome}
             title={time.nome}
             cor={time.cor}
