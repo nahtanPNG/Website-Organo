@@ -59,6 +59,23 @@ function App() {
         }
       />
 
+      {colaboradores.length > 0 && (
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <h1
+            style={{
+              color: "#6278F7",
+              fontSize: "40px",
+              textAlign: "center",
+              borderBottom: "4px solid",
+              display: "inline-block",
+              paddingBottom: "8px",
+            }}
+          >
+            Colaboradores
+          </h1>
+        </div>
+      )}
+
       {times.map((time) => {
         return (
           <Team
