@@ -50,8 +50,10 @@ function App() {
     setColaboradores([...colaboradores, colaborador]); //Pegando os colaboradores antigos e adicionando o novo
   };
 
-  function deletarColaborador() {
-    console.log("Deletar colaborador");
+  function deletarColaborador(id) {
+    setColaboradores(
+      colaboradores.filter((colaborador) => colaborador.id !== id)
+    );
   }
 
   function mudarCorDoTime(cor, id) {

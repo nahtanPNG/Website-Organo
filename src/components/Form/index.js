@@ -3,6 +3,7 @@ import Button from "../Button";
 import Dropdown from "../Dropdown";
 import TextInput from "../TextInput";
 import "./Formulario.css";
+import { v4 } from "uuid";
 
 function Form(props) {
   const [nome, setNome] = useState("");
@@ -13,6 +14,7 @@ function Form(props) {
   const handleSubmit = (event) => {
     event.preventDefault(); //Previne o comportamento padrão do evento
     props.aoCadastrarColaborador({
+      id: v4(),
       nome,
       cargo,
       imagem,

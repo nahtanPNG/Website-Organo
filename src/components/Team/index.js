@@ -5,12 +5,13 @@ import hexToRgba from "hex-to-rgba";
 function Team(props) {
   return (
     props.colaboradores.length > 0 && (
-      <section className="team" style={{ backgroundColor: hexToRgba(props.cor, '0.6') }}>
+      <section
+        className="team"
+        style={{ backgroundColor: hexToRgba(props.cor, "0.6") }}
+      >
         <input
           value={props.cor}
-          onChange={(evento) =>
-            props.mudarCor(evento.target.value, props.id)
-          }
+          onChange={(evento) => props.mudarCor(evento.target.value, props.id)}
           type="color"
           className="input-cor"
         />
@@ -19,6 +20,7 @@ function Team(props) {
           {props.colaboradores.map((colaborador) => {
             return (
               <Collaborator
+                id={colaborador.id}
                 key={colaborador.nome}
                 cor={props.cor}
                 nome={colaborador.nome}
